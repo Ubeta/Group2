@@ -187,8 +187,8 @@ html, body {
 
 		</div>
 		
-		<c:forEach var="post" items="${userPosts }">
 		<div class="post-container">
+		<c:forEach var="post" items="${userPosts }">
 			<table class="post" align="center" border="1">
 				<tr>
 					<td>${post.p_title }</td>

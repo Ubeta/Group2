@@ -107,4 +107,7 @@ public class ModelDAO {
 	}
 	//===================================
 
+	public List<MyFriendDTO> friendLists() {
+		return sqlSession.selectList(namespace+".friendLists");
+	}
 }

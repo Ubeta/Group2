@@ -1,5 +1,6 @@
 package com.care.service;
 
+import java.util.ArrayList;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
@@ -37,8 +38,21 @@ public class MLoginService implements IService{
 				HttpSession session = request.getSession();
 				session.setAttribute("sid", request.getParameter("id"));
 				model.addAttribute("login","2");
+				/*
+				 * 
+				 * 여기서 디비에서 카테고리 내가 선택한 카테고리 내용을 가져오고
+				 * 다시 한번 디비에서 내가 선택한 카테고리의 게시글들을 가져온 후
+				 * 리스트에 담아서 아래처럼 담아서 넘겨줌 ???는 글의 정보를 넣어야 함 
+				 * posts는 
+				   ArrayList<PostDTO> posts = new ArrayList<PostDTO>();
+				      각 posts마다 하나의 글을 보내고
+				   model.addAttribute("posts",posts);
+				      로 넘겨주고 메인이든 어디든 출력한다.
+				 * */
 			}
 		}
+	
+	
 	}
 
 }

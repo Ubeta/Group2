@@ -40,11 +40,45 @@
 		},#{c_book },#{c_festival },#{c_health })
 	</insert>
 
+	<!-- 이상호 -->
 	<!-- 일반 로그인임. -->
 	<select id="loginchk" resultType="memdto" parameterType="String">
 		select * from member where m_id=#{m_id}
 	</select>
+	
+	  <!-- 카카오 로그인 관련 -->
+   <select id="kakaologinchk" resultType="kdto">
+		select * from kmember where k_id=#{k_id}   
+   </select>
+   
+   <!-- 카카오 첫 로그인이면 회원가입 -->
+   <select id="regkakao" parameterType="kdto" resultType="kdto">
+   		insert into kmember values(#{k_id})
+   </select>
+   
+  <!-- 카카오 로그인 후 카테고리 가져오기 -->
+  <select id="kakaocategorychk" parameterType="kdto" resultType="catdto">
+   		select * from category where id=#{k_id}
+   </select>
+   
+  
+   <!-- 네이버 아이디가 등록되어있는지 확인 -->
+   <select id="naverloginchk" resultType="ndto" parameterType="ndto">
+   		select * from nmember where n_id=#{n_id}
+   </select>
+   
+   <!-- 네이버 첫 로그인이면 회원가입 -->
+   <select id="regnaver" parameterType="ndto">
+   		insert into nmember values(#{n_id},#{n_name},#{n_email},#{n_gender})
+   </select>
 
+   <!-- 네이버 아이디로 카테고리 가져오기    -->
+   <select id="navercategorychk" parameterType="ndto" resultType="catdto">
+   		select * from category where id=#{n_id}
+   </select>
+   
+   <!-- 이상호 끝 -->
+	
 	<!-- John(11/14): 사람 조회 select 문 -->
 	<select id="userLookUp" resultType="memdto" parameterType="String">
 		SELECT * FROM member WHERE m_id=#{m_id}

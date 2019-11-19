@@ -1,30 +1,34 @@
 package com.care.modelDTO;
 
-import org.springframework.stereotype.Service;
-
-@Service
 public class NaverDTO {
 
-	private String navername;
-	private String naveremail;
-	private String navergender;
-	public String getNaveremail() {
-		return naveremail;
+	private String n_id;
+	private String n_name;
+	private String n_email;
+	private int n_gender;
+	public int getN_gender() {
+		return n_gender;
 	}
-	public void setNaveremail(String naveremail) {
-		this.naveremail = naveremail;
+	public void setN_gender(int n_gender) {
+		this.n_gender = n_gender;
 	}
-	public String getNavergender() {
-		return navergender;
+	public String getN_id() {
+		return n_id;
 	}
-	public void setNavergender(String navergender) {
-		this.navergender = navergender;
+	public void setN_id(String n_id) {
+		this.n_id = n_id;
 	}
-	public String getNavername() {
-		return navername;
+	public String getN_name() {
+		return n_name;
 	}
-	public void setNavername(String navername) {
-		this.navername = navername;
+	public void setN_name(String n_name) {
+		this.n_name = n_name;
+	}
+	public String getN_email() {
+		return n_email;
+	}
+	public void setN_email(String n_email) {
+		this.n_email = n_email;
 	}
 	
 	

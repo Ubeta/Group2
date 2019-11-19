@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 
 import com.care.modelDTO.MemberDTO;
+import com.care.service.FListService;
 import com.care.service.IService;
 import com.care.service.MCategoryService;
 //import com.care.service.MCategoryService;
@@ -56,4 +57,11 @@ public class MainController {
 	public String mypage(){
 		return "mypage";
 	}
+	//친구 게시글만 보는 페이지 
+		@RequestMapping("f_page")
+		public String f_page(Model model) {
+			ser = context.getBean("FListService", FListService.class);
+			ser.execute(model);
+			return "f_page";
+		}
 }

@@ -23,6 +23,8 @@ html, body {
 .main-wrapper {
 	width: 1950px;
 	height: 100%;
+	display: flex;
+	flex-flow: row;
 }
 
 .info-container {
@@ -56,29 +58,32 @@ html, body {
 	margin-top: 20%;
 }
 
-table {
+.info {
 	font-size: 14pt;
+}
+
+.info table {
 	border-collapse: collapse;
 }
 
-table td, table th {
+.info table td, table th {
 	border: 1px solid #2F4F4F;
 	padding: 4px;
 }
 
-table tr:first-child td {
+.info table tr:first-child td {
 	border-top: 0;
 }
 
-table tr:last-child td {
+.info table tr:last-child td {
 	border-bottom: 0;
 }
 
-table tr td:first-child, table tr th:first-child {
+.info table tr td:first-child, table tr th:first-child {
 	border-left: 0;
 }
 
-table tr td:last-child, table tr th:last-child {
+.info table tr td:last-child, table tr th:last-child {
 	border-right: 0;
 }
 
@@ -122,6 +127,12 @@ table tr td:last-child, table tr th:last-child {
 	cursor: pointer;
 	border-radius: 6px;
 }
+
+.post-container {
+	order: 2;
+	width: 60%;
+	
+}
 </style>
 
 </head>
@@ -136,7 +147,7 @@ table tr td:last-child, table tr th:last-child {
 			<span class="user-name">${member.m_id} 님</span> <img
 				class="profile-pic" src="img/${member.m_pic }" />
 			<div class="user-info">
-				<table align="center">
+				<table class="info" align="center">
 					<tr>
 						<td>이름</td>
 						<td>${member.m_name }</td>
@@ -175,6 +186,23 @@ table tr td:last-child, table tr th:last-child {
 			</div>
 
 		</div>
+		
+		<c:forEach var="post" items="${userPosts }">
+		<div class="post-container">
+			<table class="post" align="center" border="1">
+				<tr>
+					<td>${post.p_title }</td>
+					<td>${post.m_id }</td>
+				</tr>
+				<tr>
+					<td>${post.p_content }</td>
+				</tr>
+			</table>
+		</c:forEach>
+		
+		</div>
+		
+		
 	</div>
 
 

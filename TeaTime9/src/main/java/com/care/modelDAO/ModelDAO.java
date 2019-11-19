@@ -9,6 +9,7 @@ import org.springframework.stereotype.Repository;
 import com.care.modelDTO.CategoryDTO;
 import com.care.modelDTO.MemberDTO;
 import com.care.modelDTO.MyFriendDTO;
+import com.care.modelDTO.PostDTO;
 
 @Repository
 public class ModelDAO {
@@ -83,12 +84,14 @@ public class ModelDAO {
 		} catch (Exception e){
 			
 		}
-
 		return ifFriend;
 	}
 
 	public MemberDTO userLookUp(String m_id) {
 		return sqlSession.selectOne(namespace + ".userLookUp", m_id);
+	}
+	public List<PostDTO> getUserPosts(String m_id) {
+		return sqlSession.selectList(namespace + ".getUserPosts", m_id);
 	}
 	//===========================================
 	

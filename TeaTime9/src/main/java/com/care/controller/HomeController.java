@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.care.service.IService;
 import com.care.service.ULookUpService;
+import com.care.service.UPostService;
 
 /**
  * Handles requests for the application home page.
@@ -73,6 +74,8 @@ public class HomeController {
 	public String u_page(Model model, HttpServletRequest request) {
 		model.addAttribute("request", request);
 		ser = context.getBean("ULookUpService", ULookUpService.class);
+		ser.execute(model);
+		ser = context.getBean("UPostService", UPostService.class);
 		ser.execute(model);
 		return "u_page";
 	}

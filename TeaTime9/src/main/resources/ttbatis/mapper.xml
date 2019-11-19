@@ -46,16 +46,20 @@
 	</select>
 
 	<!-- John(11/14): 사람 조회 select 문 -->
-	<select id="userLookUp" resultType="memdto"
-		parameterType="String">
+	<select id="userLookUp" resultType="memdto" parameterType="String">
 		SELECT * FROM member WHERE m_id=#{m_id}
 	</select>
 	<!-- John(11/15): 친구인지 확인 문 -->
-	<select id="checkIfFriend" resultType="Integer"
-		parameterType="mfdto">
+	<select id="checkIfFriend" resultType="Integer" parameterType="mfdto">
 		SELECT f_isfriend FROM myfriend WHERE m_id=#{m_id} AND
 		f_id=#{f_id}
 	</select>
+	<select id="getUserPosts" resultType="podto" parameterType="String">
+		SELECT * FROM post WHERE m_id=#{m_id}
+	</select>
+	<!-- John 긑 -->
+	
+	
 	<!-- yang -->
 	<!-- 내정보 가져오기 -->
    <select id="my_info" resultType="memdto" parameterType="String">

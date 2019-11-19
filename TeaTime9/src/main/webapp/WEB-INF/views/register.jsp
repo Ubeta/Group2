@@ -117,7 +117,7 @@
 		var pwchk = document.getElementById("m_pwchk").value;
 		var name = document.getElementById("m_name").value;
 		var idnum = document.getElementById("m_idnum").value;
-		var gender = document.getElementById("m_gender").value;
+		var gender = $(":input:radio[name=m_gender]:checked").val();
 		var tel = document.getElementById("m_tel").value;
 		var mail = document.getElementById("m_mail").value;
 		

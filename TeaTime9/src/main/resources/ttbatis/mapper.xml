@@ -56,4 +56,12 @@
 		SELECT f_isfriend FROM myfriend WHERE m_id=#{m_id} AND
 		f_id=#{f_id}
 	</select>
+	<!-- yang -->
+	<!-- 내정보 가져오기 -->
+   <select id="my_info" resultType="memdto" parameterType="String">
+   		select * from member where m_id=#{my_id}
+   </select>
+   <select id="my_cat" resultType="catdto" parameterType="String">
+   		select * from category where m_id=#{my_id}
+   </select>
 </mapper>

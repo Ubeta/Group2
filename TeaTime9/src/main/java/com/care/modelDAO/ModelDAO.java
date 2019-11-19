@@ -91,5 +91,17 @@ public class ModelDAO {
 		return sqlSession.selectOne(namespace + ".userLookUp", m_id);
 	}
 	//===========================================
+	
+	//==============yang================
+	public MemberDTO my_info(String my_id) {
+		return sqlSession.selectOne(namespace+".my_info", my_id);
+	}
+	public CategoryDTO my_cat(String my_id) {
+		return sqlSession.selectOne(namespace+".my_cat", my_id);
+	}
+	public MemberDTO f_info(String my_id) {
+		return sqlSession.selectOne(namespace+".my_info", my_id);
+	}
+	//===================================
 
 }
